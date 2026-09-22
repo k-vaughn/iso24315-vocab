@@ -1,0 +1,57 @@
+name: Page feedback
+description: Comment on or suggest a change to a vocabulary or documentation page
+title: "[Page feedback] "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report errors, suggest improvements, or ask questions about a specific page on the METR vocabulary site.
+
+        Fields marked with * are required. Page title and path are pre-filled when you open this form from a page on the site.
+  - type: input
+    id: page-title
+    attributes:
+      label: Page title
+      description: Heading shown on the page (for example, a term name or pattern title).
+      placeholder: road vehicle
+    validations:
+      required: true
+  - type: input
+    id: page-path
+    attributes:
+      label: Page path
+      description: Path within the published site (for example, `terms/road vehicle.md`).
+      placeholder: terms/road vehicle.md
+    validations:
+      required: true
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Type of feedback
+      description: Choose the category that best describes your comment.
+      options:
+        - Correction (definition, clause, link, diagram, etc.)
+        - Clarification request
+        - Missing information
+        - Website or formatting issue
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: Your comment
+      description: Describe the issue or suggestion. Include references (clause numbers, sources, proposed wording) when applicable.
+      placeholder: Please describe what should be changed and why.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Contribution
+      description: By submitting this issue, you agree that your comment may be used to improve the vocabulary and documentation.
+      options:
+        - label: I understand this is a public GitHub issue and may be discussed in the open.
+          required: true

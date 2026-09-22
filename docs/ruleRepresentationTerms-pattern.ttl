@@ -1,0 +1,41 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:ruleRepresentationTerms a owl:Ontology ;
+    dcterms:title "Rule Representation Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:electronicRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "representation of a [rule](rule.md) in a structured, digital format that can be readily processed by a computer to determine the intent of the rule"@en ;
+    skos:prefLabel "electronic rule"@en ;
+    :clause "3.2.6.1"@en .
+
+:legalRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "representation of a [rule](rule.md) as recorded in official records of the [jurisdictional entity](jurisdictional entity.md)"@en ;
+    skos:prefLabel "legal rule"@en ;
+    :clause "3.2.6.2"@en .
+
+:metrRule a owl:Class ;
+    rdfs:subClassOf :electronicRule ;
+    skos:definition "[electronic rule](electronic rule.md) that is produced and distributed in a trustworthy manner"@en ;
+    skos:note "Digitized images do not meet this definition of electronic."@en ;
+    skos:prefLabel "METR rule"@en ;
+    :clause "3.2.6.3"@en .
+
+:physicalRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "representation of a [rule](rule.md) as presented in the field"@en ;
+    skos:example "The speed limit as displayed on a speed limit sign"@en ;
+    skos:prefLabel "physical rule"@en ;
+    :clause "3.2.6.4"@en .

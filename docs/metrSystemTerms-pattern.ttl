@@ -1,0 +1,87 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:metrSystemTerms a owl:Ontology ;
+    dcterms:title "METR System Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:centralDistributionSystem a owl:Class ;
+    rdfs:subClassOf :metrDistributionSystem ;
+    skos:definition "[METR distribution system](METR distribution system.md) where the provisioning of data is from a [central system](https://isotc204.org/iso14812/terms/central system/)"@en ;
+    skos:prefLabel "central distribution system"@en ;
+    :clause "3.3.2.1"@en .
+
+:fieldDistributionSystem a owl:Class ;
+    rdfs:subClassOf :metrDistributionSystem ;
+    skos:definition "[METR distribution system](METR distribution system.md) where the provisioning of data is from a [field](https://isotc204.org/iso14812/terms/field system/) or [vehicle system](https://isotc204.org/iso14812/terms/vehicle system/)"@en ;
+    skos:prefLabel "field distribution system"@en ;
+    :clause "3.3.2.2"@en .
+
+:metr a owl:Class ;
+    skos:definition "collection of [ITS services](https://isotc204.org/iso14812/terms/ITS service/) that provide for the distribution of [electronic rules](electronic rule.md) for the road network in a manner that satisfies [trustworthiness](trustworthiness.md) principles"@en ;
+    skos:prefLabel "METR"@en ;
+    :altPrefLabel "management of electronic traffic regulations"@en ;
+    :clause "3.3.2.3"@en .
+
+:metrComponent a owl:Class ;
+    rdfs:subClassOf :translator ;
+    skos:definition "[ITS component](https://isotc204.org/iso14812/terms/ITS component/) designed to assist a [translator](translator.md), [rule verifier](rule verifier.md), [rule signer](rule signer.md), [distributor](distributor.md), [adapter](adapter.md), or [discrepancy handler](discrepancy handler.md) in performing its duties"@en ;
+    skos:prefLabel "METR component"@en ;
+    :clause "3.3.2.4"@en .
+
+:metrConsumerSystem a owl:Class ;
+    skos:definition "[ITS component](https://isotc204.org/iso14812/terms/ITS component/) developed to fulfil the data processing responsibilities assigned to the [receiver](receiver.md) and optionally the [discrepancy reporter](discrepancy reporter.md)"@en ;
+    skos:prefLabel "METR consumer system"@en ;
+    :altPrefLabel "consumer system"@en ;
+    :clause "3.3.2.5"@en .
+
+:metrDiscrepancyHandlingSystem a owl:Class ;
+    skos:definition "[ITS component](https://isotc204.org/iso14812/terms/ITS component/) developed to fulfil the data processing responsibilities assigned to the [discrepancy handler](discrepancy handler.md)"@en ;
+    skos:prefLabel "METR discrepancy handling system"@en ;
+    :altPrefLabel "discrepancy handling system"@en ;
+    :clause "3.3.2.6"@en .
+
+:metrDistributionSystem a owl:Class ;
+    skos:definition "[ITS component](https://isotc204.org/iso14812/terms/ITS component/) developed to fulfil the data processing responsibilities assigned to the [distributor](distributor.md)"@en ;
+    skos:prefLabel "METR distribution system"@en ;
+    :altPrefLabel "distribution system"@en ;
+    :clause "3.3.2.7"@en .
+
+:metrEnvironment a owl:Class ;
+    rdfs:subClassOf :metrSystemOfSystems ;
+    skos:definition "aggregation of the [METR system of systems](METR system of systems.md), [supporting data providers](supporting data provider.md), and other systems contained in the [METR](METR.md) physical view diagrams"@en ;
+    skos:prefLabel "METR environment"@en ;
+    :clause "3.3.2.8"@en .
+
+:metrRegulationSystem a owl:Class ;
+    skos:definition "[ITS component](https://isotc204.org/iso14812/terms/ITS component/) developed to fulfil the data processing responsibilities assigned to the [translator](translator.md)"@en ;
+    skos:prefLabel "METR regulation system"@en ;
+    :altPrefLabel "regulation system"@en ;
+    :clause "3.3.2.9"@en .
+
+:metrSystemOfSystems a owl:Class ;
+    rdfs:subClassOf :systemOfSystems ;
+    skos:definition "[system of systems](system of systems.md) representing the aggregation of all [METR components](METR component.md) currently connected within a network"@en ;
+    skos:prefLabel "METR system of systems"@en ;
+    :clause "3.3.2.10"@en .
+
+:metrUserSystem a owl:Class ;
+    skos:definition "[ITS component](https://isotc204.org/iso14812/terms/ITS component/) developed to fulfil the data processing responsibilities assigned to the [adapter](adapter.md)"@en ;
+    skos:note "A METR user system often includes other end user functionality as well. For example, it can include a vehicle offering other driver and passenger services."@en ;
+    skos:prefLabel "METR user system"@en ;
+    :clause "3.3.2.11"@en .
+
+:systemOfSystems a owl:Class ;
+    skos:definition "set of operationally and managerially independent systems that interoperate for a period of time to achieve one or more stated purposes"@en ;
+    skos:note "The operational and managerial independence of each component system complicates the operation and management of these systems. For example, the systems within a system of systems are upgraded and maintained on different schedules and the design of the system of systems is more complex as a result."@en ;
+    skos:prefLabel "system of systems"@en ;
+    :clause "3.3.2.12"@en .

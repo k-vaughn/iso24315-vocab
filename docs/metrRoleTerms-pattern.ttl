@@ -1,0 +1,228 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:metrRoleTerms a owl:Ontology ;
+    dcterms:title "METR Role Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:adapter a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for interpreting, fusing and adapting data provided by the [receiver](receiver.md) and [supporting data providers](supporting data provider.md) into a format that the [METR user](METR user.md) can support"@en ;
+    skos:note "Adapting data can result in another electronic format (e.g., translation among different electronic interface standards) or to a human-machine interface format, as might be performed by a driver support system."@en,
+        "The adapter can also provide discrepancies to a [discrepancy reporter](discrepancy reporter.md)."@en ;
+    skos:prefLabel "adapter"@en ;
+    :clause "3.3.1.1"@en .
+
+:adjudicator a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for making formal judgements on disputed matters related to [rules](rule.md)"@en ;
+    skos:prefLabel "adjudicator"@en ;
+    :clause "3.3.1.2"@en .
+
+:ancillaryUser a owl:Class ;
+    rdfs:subClassOf :metrUser ;
+    skos:definition "[METR user](METR user.md) that is not a [transport-related user](transport-related user.md)"@en ;
+    skos:example "insurance company"@en,
+        "lawyer"@en,
+        "police officer"@en ;
+    skos:note "Ancillary users typically provide verification of the system or support transport users in their transport needs."@en ;
+    skos:prefLabel "ancillary user"@en ;
+    :clause "3.3.1.3"@en .
+
+:authorizedActor a owl:Class ;
+    rdfs:subClassOf :ruleImplementer ;
+    skos:definition "[rule implementer](rule implementer.md) that has received permission from a rule maker (3.3.1.24) to enable and disable specific [rules](rule.md) as necessary"@en ;
+    skos:example "A construction contractor can be granted the authority to close a specific lane of traffic at a specific location within specified time constraints as the contractor deems necessary to ensure safety of the public during construction activities."@en ;
+    skos:note "Depending on the rule, legal environment, etc. enabled and disabled can equate to either [implemented](implemented rule.md) and [rescinded](rescinded rule.md) or [active](active rule.md) and [inactive](inactive rule.md)."@en ;
+    skos:prefLabel "authorized actor"@en ;
+    :clause "3.3.1.4"@en .
+
+:consumerSystemDeveloper a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for developing the software for the [receiver](receiver.md) and optionally the [discrepancy reporter](discrepancy reporter.md)"@en ;
+    skos:prefLabel "consumer system developer"@en ;
+    :clause "3.3.1.5"@en .
+
+:crowd-sourcedDataProvider a owl:Class ;
+    rdfs:subClassOf :supportingDataProvider ;
+    skos:definition "[supporting data provider](supporting data provider.md) that provides crowd-sourced data (3.2.1.1)"@en ;
+    skos:prefLabel "crowd-sourced data provider"@en ;
+    :clause "3.3.1.6"@en .
+
+:dataProvider a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for providing trustworthy information"@en ;
+    skos:note "The required degree of [trustworthiness](trustworthiness.md) can vary based on the intended use of the data as well as applicable legal requirements (e.g., certification requirements)."@en ;
+    skos:prefLabel "data provider"@en ;
+    :clause "3.3.1.7"@en .
+
+:discrepancyHandler a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for receiving reports from [discrepancy reporters](discrepancy reporter.md) and passing the information to associated [translators](translator.md) in an aggregate and anonymous form for resolution"@en ;
+    skos:prefLabel "discrepancy handler"@en ;
+    :clause "3.3.1.8"@en .
+
+:discrepancyReporter a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for reporting variances between [rules](rule.md) previously received via METR and information detected in the field"@en ;
+    skos:note "The information can be detected using vehicle-based sensors or through manual observations."@en,
+        "Within METR enterprise view, the discrepancy reporter is considered to be a part of the [METR consumer system](METR consumer system.md)."@en ;
+    skos:prefLabel "discrepancy reporter"@en ;
+    :clause "3.3.1.9"@en .
+
+:distributor a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for gathering [rules](rule.md) from one or more [translators](translator.md) and distributing them to [METR users](METR user.md) via [receivers](receiver.md) and [adapters](adapter.md)"@en ;
+    skos:prefLabel "distributor"@en ;
+    :altPrefLabel "METR distributor"@en ;
+    :clause "3.3.1.10"@en .
+
+:emergentRuleDistributor a owl:Class ;
+    rdfs:subClassOf :distributor ;
+    skos:definition "[distributor](distributor.md) that is responsible for distributing [emergent rules](emergent rule.md)"@en ;
+    skos:note "Emergent rule distributors are envisioned to include broadcast sites with a short transmission range. Such sites are likely to distribute emergent rules that are applicable to the broadcast area, which is likely a subset of all emergent rules within a METR network coverage area."@en ;
+    skos:prefLabel "emergent rule distributor"@en ;
+    :clause "3.3.1.11"@en .
+
+:enforcer a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is authorized to and responsible for compelling compliance with a [rule](rule.md)"@en ;
+    skos:note "An enforcer can be authorized to enforce rules for multiple jurisdictional entities. For example, a police officer can be authorized to enforce national laws."@en,
+        "An enforcer can be from an independent organization. For example, a [campus](campus.md) can contract with a private enforcement agency or have its own enforcement agency."@en ;
+    skos:prefLabel "enforcer"@en ;
+    :clause "3.3.1.12"@en .
+
+:infrastructure-sourcedDataProvider a owl:Class ;
+    rdfs:subClassOf :supportingDataProvider ;
+    skos:definition "[supporting data provider](supporting data provider.md) that provides [infrastructure-sourced data](infrastructure-sourced data.md)"@en ;
+    skos:prefLabel "infrastructure-sourced data provider"@en ;
+    :clause "3.3.1.13"@en .
+
+:installer a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for posting [rules](rule.md) for a [jurisdictional area](jurisdictional area.md) using [conventional traffic control devices](conventional traffic control device.md)"@en ;
+    skos:note "Installer responsibilities include installing signs, signals, markings, physical barriers, etc. to properly reflect the rules established by the [rule maker](rule maker.md)."@en,
+        "The installer can leave the conventional traffic control device in an [unobservable](unobservable rule.md) state (e.g., the conventional traffic control device can be covered or in the case of a message sign left blank). In this case, a separate [rule implementer](rule implementer.md) can be made responsible for implementing the rule (e.g., removing a cover or posting a message on a sign). Alternatively, a single entity can serve as both the installer and rule implementer."@en ;
+    skos:prefLabel "installer"@en ;
+    :clause "3.3.1.14"@en .
+
+:issuingAuthority a owl:Class ;
+    rdfs:subClassOf :ruleMaker ;
+    skos:definition "[rule maker](rule maker.md) that established a specific [rule](rule.md)"@en ;
+    skos:prefLabel "issuing authority"@en ;
+    :clause "3.3.1.15"@en .
+
+:metrUser a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for using applicable [rules](rule.md) to fulfil a [need](https://isotc204.org/iso14812/terms/user need/)"@en ;
+    skos:note "METR users include [transport users](https://isotc204.org/iso14812/terms/transport user/) and [ancillary users](ancillary user.md)."@en,
+        "The need being fulfilled is often the performance of the dynamic driving task or similar action (e.g., the task of walking in a safe manner that complies with local rules) but can also be trip planning, rule verification, etc."@en ;
+    skos:prefLabel "METR user"@en ;
+    skos:altLabel "user"@en ;
+    :clause "3.3.1.16"@en .
+
+:non-metrDistributor a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for distributing [rules](rule.md) in manners that do not conform to METR"@en ;
+    skos:example "distribution system that provides rules using protocols that do not meet METR security requirements"@en ;
+    skos:prefLabel "non-METR distributor"@en ;
+    :clause "3.3.1.17"@en .
+
+:peer-sourcedDataProvider a owl:Class ;
+    rdfs:subClassOf :supportingDataProvider ;
+    skos:definition "[supporting data provider](supporting data provider.md) that provides [peer-sourced data](peer-sourced data.md)"@en ;
+    skos:prefLabel "peer-sourced data provider"@en ;
+    :clause "3.3.1.18"@en .
+
+:pre-announcedRuleDistributor a owl:Class ;
+    rdfs:subClassOf :distributor ;
+    skos:definition "[distributor](distributor.md) that is responsible for distributing all [pre-announced rules](pre-announced rule.md) requested by a [METR user](METR user.md) and within the publicized [data categories](data category.md) supported by the distributor"@en ;
+    skos:note "The pre-announced rule distributor is primarily envisioned to use a central system, but can use a mobile unit dispatched to a location without internet connectivity."@en,
+        "A pre-announced rule distributor can also distribute [emergent rules](emergent rule.md) but does not bear the responsibility for doing so."@en ;
+    skos:prefLabel "pre-announced rule distributor"@en ;
+    :clause "3.3.1.19"@en .
+
+:receiver a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for retrieving, receiving, processing and maintaining a local store of [METR information](METR information.md)"@en ;
+    skos:note "The material entity hosting the receiver is typically a vehicle, but can be a personal information device, such as a smartphone."@en,
+        "Within METR enterprise view, the receiver is considered to be a part of the [METR consumer system](METR consumer system.md)."@en ;
+    skos:prefLabel "receiver"@en ;
+    :clause "3.3.1.20"@en .
+
+:regulator a owl:Class ;
+    rdfs:subClassOf :ruleMaker ;
+    skos:definition "[rule maker](rule maker.md) appointed by a [jurisdictional entity](jurisdictional entity.md) to create and maintain [rules](rule.md) within a defined scope"@en ;
+    skos:example "A private [campus](campus.md) can be granted authority by a local government who has been granted authority by the national government to make such assignments."@en ;
+    skos:note "The term \"competent authority\" is used in many European contexts."@en ;
+    skos:prefLabel "regulator"@en ;
+    skos:altLabel "competent authority"@en ;
+    :clause "3.3.1.21"@en .
+
+:ruleImplementer a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for enabling a [rule](rule.md)"@en ;
+    skos:note "Enabling the rule includes ensuring [unposted rules](unposted rule.md) are properly captured within the public [record](pubic record.md) and [posted rules](posted rule.md) are installed and [observable](observable rule.md)."@en,
+        "The rule implementer is responsible for notifying the associated [translator](translator.md) when [conventional traffic control devices](conventional traffic control device.md) have been implemented so that electronic records can be updated."@en ;
+    skos:prefLabel "rule implementer"@en ;
+    :altPrefLabel "implementer"@en ;
+    :clause "3.3.1.22"@en .
+
+:ruleMaker a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that has the responsibility for creating and maintaining rules (3.2.1.9) for a geographic and operational scope as defined by the parent [jurisdictional entity](jurisdictional entity.md)"@en ;
+    skos:note "Rule makers include legislative bodies, which often establish the rules of the road, and regulators, which are typically responsible for location-specific rules, such as speed limits and stop signs."@en,
+        "A simple jurisdictional entity can have a single entity that fulfils multiple roles. For example, the owner of a small shop can act as the jurisdictional entity, the rule maker, the [translator](translator.md), and the [rule signer](rule signer.md) for issuing accessible parking restrictions for the small parking lot."@en,
+        "A complex jurisdictional entity can designate multiple rule makers, each assigned for different areas, different purposes, or both. For example, the State of New York can adopt a [highway code](highway code.md) that assigns its department of transportation the responsibility to create and maintain rules for motorways and allows local jurisdictions to create and maintain additional rules. Based on its authority, New York City can assign its department of transportation the responsibility to create and maintain static and temporary stop sign locations throughout the city, assign each precinct of its police department with the authority to create and maintain temporary stop sign locations only within their respective precincts, and assign land owners the responsibility to designate parking spaces for travellers with disabilities."@en ;
+    skos:prefLabel "rule maker"@en ;
+    :clause "3.3.1.23"@en .
+
+:ruleSigner a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that reviews and formally confirms the accuracy and integrity of an [electronic rule](electronic rule.md)"@en ;
+    skos:note "Derived from SP-41,SP-158."@en,
+        "METR uses non-repudiation to permanently associate the rule signing organization with the electronic rule (e.g., using an electronic signature). This can result in the assignment of legal responsibility for the accuracy and integrity of the rule. The association to the specific responsible individual can be achieved through in a multi-step process. For example, the [METR regulation system](METR regulation system.md) can associate the individual rule signing agent to the rule via an internal database entry while the electronic rule is associated with a rule signing organization through the use of an electronic signature."@en,
+        "Ideally, the rule signing organization is the rule making organization but it can be a separate entity (e.g., if the rule making organization does not provide electronic rules)."@en ;
+    skos:prefLabel "rule signer"@en ;
+    :clause "3.3.1.24"@en .
+
+:ruleVerifier a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for independently verifying that each [electronic rule](electronic rule.md) accurately represents the [legal rule](legal rule.md)"@en ;
+    skos:prefLabel "rule verifier"@en ;
+    :clause "3.3.1.25"@en .
+
+:storedDataProvider a owl:Class ;
+    rdfs:subClassOf :supportingDataProvider ;
+    skos:definition "[supporting data provider](supporting data provider.md) that is built into the user's [material entity](https://isotc204.org/iso14812/terms/material entity/) hosting the [receiver](receiver.md) and provides [supporting data](supporting data.md) that has been previously configured within the device"@en ;
+    skos:example "Data store that provides configured information such as vehicle characteristics, such as engine size, fuel type, vehicle width, length, and height, etc."@en ;
+    skos:note "Stored data can change, but changes tend to be infrequent. Example changes can include a parking permit being added, a cargo carrier being attached that changes the vehicle's effective dimensions, or snow chains being installed on tires."@en ;
+    skos:prefLabel "stored data provider"@en ;
+    :clause "3.3.1.26"@en .
+
+:supportingDataProvider a owl:Class ;
+    rdfs:subClassOf :crowd-sourcedDataProvider ;
+    skos:definition "data [provider](crowd-sourced data provider.md) that is responsible for distributing [supporting data](supporting data.md) to [METR users](METR user.md) via interpreters (3.3.1.14)"@en ;
+    skos:note "Derived from SP-75."@en,
+        "Supporting data providers include in-vehicle data providers and external data providers."@en ;
+    skos:prefLabel "supporting data provider"@en ;
+    :clause "3.3.1.27"@en .
+
+:translator a owl:Class ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for translating [rules](rule.md) defined by [rule maker](rule maker.md) into an electronic format for [METR](METR.md)"@en ;
+    skos:prefLabel "translator"@en ;
+    :clause "3.3.1.28"@en .
+
+:transport-relatedUser a owl:Class ;
+    rdfs:subClassOf :metrUser ;
+    skos:definition "[METR user](METR user.md) that is either a [transport user](https://isotc204.org/iso14812/terms/transport user/), a [driver](https://isotc204.org/iso14812/terms/driver/), a [driving automation system](https://isotc204.org/iso14812/terms/driving automation system/), or a driver information system"@en ;
+    skos:prefLabel "transport-related user"@en ;
+    :clause "3.3.1.29"@en .
+
+:user-sourcedDataProvider a owl:Class ;
+    rdfs:subClassOf :supportingDataProvider ;
+    skos:definition "[supporting data provider](supporting data provider.md) that provides [user-sourced data](user-sourced data.md)"@en ;
+    skos:prefLabel "user-sourced data provider"@en ;
+    :clause "3.3.1.30"@en .
+
+:vehicle-sourcedDataProvider a owl:Class ;
+    rdfs:subClassOf :supportingDataProvider ;
+    skos:definition "[supporting data provider](supporting data provider.md) that provides [vehicle-sourced data](vehicle-sourced data.md)"@en ;
+    skos:example "GNSS positioning data (i.e., GNSS positioning data is determined by an on-board algorithm that analyses multiple GNSS signals to produce an estimate of a geographic position)."@en ;
+    skos:note "In-vehicle data providers can produce [supporting data](supporting data.md) that is derived from external data sources, for example by using sensors, clocks, GNSS receivers, and/or other devices with its own algorithms."@en,
+        "The \"user device\" is nominally a vehicle, but can be a smartphone if it hosts the METR [receiver](receiver.md), e.g., in the case of a pedestrian."@en ;
+    skos:prefLabel "vehicle-sourced data provider"@en ;
+    :clause "3.3.1.31"@en .

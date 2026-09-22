@@ -1,0 +1,9 @@
+name: Auto Assign PR on `.take` with Triage Check
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  assign:
+    uses: ISO-TC204/ontology-shared-scripts/.github/workflows/auto_assign.yml@main

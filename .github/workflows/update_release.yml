@@ -1,0 +1,22 @@
+name: Deploy MkDocs site to GitHub Pages with Release Number
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Git tag / mike version to deploy (leave empty to use UTC timestamp)"
+        required: false
+        type: string
+        default: ""
+  release:
+    types: [created]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    uses: ISO-TC204/ontology-shared-scripts/.github/workflows/update_release.yml@main
+    with:
+      release_tag: ${{ github.event.release.tag_name || github.event.inputs.release_tag || '' }}
+    secrets: inherit

@@ -1,0 +1,7 @@
+/docs/diagrams/*.svg
+/docs/diagrams/*.png
+/site/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

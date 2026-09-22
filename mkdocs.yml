@@ -1,0 +1,270 @@
+site_name: METR - Vocabulary
+site_description: A vocabulary defined for the management of electronic transport
+  regulations (METR) and documented as a formal ontology.
+repo_url: https://github.com/ISO-TC204/iso24315-vocab
+site_url: https://isotc204.org/iso24315/
+nav:
+- TC204 on ISO.org: https://www.iso.org/committee/54706.html
+- TC 204 Home: https://isotc204.org/
+- METR: https://isotc204.org/iso24315/
+- Vocabulary:
+  - Home: index.md
+  - Alphabetical Listing: terms/concept_registry.md
+  - Jurisdictional Terms:
+    - terms/groups/Jurisdictional Terms.md
+    - Jurisdictional Terms:
+      - terms/patterns/Jurisdictional Terms.md
+      - campus: terms/campus.md
+      - defined area: terms/defined area.md
+      - governmental area: terms/governmental area.md
+      - jurisdiction: terms/jurisdiction.md
+      - jurisdictional area: terms/jurisdictional area.md
+      - jurisdictional boundary: terms/jurisdictional boundary.md
+      - jurisdictional entity: terms/jurisdictional entity.md
+      - region: terms/region.md
+      - sub-area: terms/sub-area.md
+  - Data Terms:
+    - terms/groups/Data Terms.md
+    - General Data Terms:
+      - terms/patterns/General Data Terms.md
+      - advisory: terms/advisory.md
+      - crowd-sourced data: terms/crowd-sourced data.md
+      - data category: terms/data category.md
+      - discrepancy: terms/discrepancy.md
+      - guidance: terms/guidance.md
+      - highway code: terms/highway code.md
+      - infrastructure-sourced data: terms/infrastructure-sourced data.md
+      - jurisdiction-sourced data: terms/jurisdiction-sourced data.md
+      - jurisdictional vocabulary: terms/jurisdictional vocabulary.md
+      - METR information: terms/METR information.md
+      - peer-sourced data: terms/peer-sourced data.md
+      - regulation: terms/regulation.md
+      - rule: terms/rule.md
+      - rule order: terms/rule order.md
+      - rule set: terms/rule set.md
+      - rules of the road: terms/rules of the road.md
+      - supporting data: terms/supporting data.md
+      - user-sourced data: terms/user-sourced data.md
+      - vehicle-sourced data: terms/vehicle-sourced data.md
+    - Discrepancy State Terms:
+      - terms/patterns/Discrepancy State Terms.md
+      - confirmed discrepancy: terms/confirmed discrepancy.md
+      - detected discrepancy: terms/detected discrepancy.md
+      - rejected discrepancy: terms/rejected discrepancy.md
+      - reported discrepancy: terms/reported discrepancy.md
+      - resolved discrepancy: terms/resolved discrepancy.md
+      - suspected discrepancy: terms/suspected discrepancy.md
+    - Rule Publication Terms:
+      - terms/patterns/Rule Publication Terms.md
+      - observable rule: terms/observable rule.md
+      - posted rule: terms/posted rule.md
+      - pubic record: terms/pubic record.md
+      - publicized rule: terms/publicized rule.md
+      - unobservable rule: terms/unobservable rule.md
+      - unposted rule: terms/unposted rule.md
+    - Rule State Terms:
+      - terms/patterns/Rule State Terms.md
+      - active rule: terms/active rule.md
+      - approved rule: terms/approved rule.md
+      - implemented rule: terms/implemented rule.md
+      - inactive rule: terms/inactive rule.md
+      - inception time: terms/inception time.md
+      - overridden rule: terms/overridden rule.md
+      - proposed rule: terms/proposed rule.md
+      - rescinded rule: terms/rescinded rule.md
+      - revoked rule: terms/revoked rule.md
+      - termination time: terms/termination time.md
+    - METR Information State Terms:
+      - terms/patterns/METR Information State Terms.md
+      - fresh METR information: terms/fresh METR information.md
+      - freshness period: terms/freshness period.md
+      - outdated METR information: terms/outdated METR information.md
+    - Rule Representation Terms:
+      - terms/patterns/Rule Representation Terms.md
+      - electronic rule: terms/electronic rule.md
+      - legal rule: terms/legal rule.md
+      - METR rule: terms/METR rule.md
+      - physical rule: terms/physical rule.md
+    - Rule Announcement Terms:
+      - terms/patterns/Rule Announcement Terms.md
+      - emergent rule: terms/emergent rule.md
+      - pre-announced rule: terms/pre-announced rule.md
+    - Rule Projected Longevity Terms:
+      - terms/patterns/Rule Projected Longevity Terms.md
+      - persistent rule: terms/persistent rule.md
+      - temporary rule: terms/temporary rule.md
+    - Rule Terms Related to Supporting Data:
+      - terms/patterns/Rule Terms Related to Supporting Data.md
+      - condition-based rule: terms/condition-based rule.md
+      - time-based rule: terms/time-based rule.md
+      - variable rule: terms/variable rule.md
+    - Rule Relevancy Terms:
+      - terms/patterns/Rule Relevancy Terms.md
+      - non-relevant rule: terms/non-relevant rule.md
+      - relevant rule: terms/relevant rule.md
+    - Distribution Terms:
+      - terms/patterns/Distribution Terms.md
+      - cyber location: terms/cyber location.md
+      - dissemination plan: terms/dissemination plan.md
+      - localized distribution: terms/localized distribution.md
+      - pulled distribution: terms/pulled distribution.md
+      - pushed distribution: terms/pushed distribution.md
+      - wide-area distribution: terms/wide-area distribution.md
+  - METR Architectural Terms:
+    - terms/groups/METR Architectural Terms.md
+    - METR Role Terms:
+      - terms/patterns/METR Role Terms.md
+      - adapter: terms/adapter.md
+      - adjudicator: terms/adjudicator.md
+      - ancillary user: terms/ancillary user.md
+      - authorized actor: terms/authorized actor.md
+      - consumer system developer: terms/consumer system developer.md
+      - crowd-sourced data provider: terms/crowd-sourced data provider.md
+      - data provider: terms/data provider.md
+      - discrepancy handler: terms/discrepancy handler.md
+      - discrepancy reporter: terms/discrepancy reporter.md
+      - distributor: terms/distributor.md
+      - emergent rule distributor: terms/emergent rule distributor.md
+      - enforcer: terms/enforcer.md
+      - infrastructure-sourced data provider: terms/infrastructure-sourced data provider.md
+      - installer: terms/installer.md
+      - issuing authority: terms/issuing authority.md
+      - METR user: terms/METR user.md
+      - non-METR distributor: terms/non-METR distributor.md
+      - peer-sourced data provider: terms/peer-sourced data provider.md
+      - pre-announced rule distributor: terms/pre-announced rule distributor.md
+      - receiver: terms/receiver.md
+      - regulator: terms/regulator.md
+      - rule implementer: terms/rule implementer.md
+      - rule maker: terms/rule maker.md
+      - rule signer: terms/rule signer.md
+      - rule verifier: terms/rule verifier.md
+      - stored data provider: terms/stored data provider.md
+      - supporting data provider: terms/supporting data provider.md
+      - translator: terms/translator.md
+      - transport-related user: terms/transport-related user.md
+      - user-sourced data provider: terms/user-sourced data provider.md
+      - vehicle-sourced data provider: terms/vehicle-sourced data provider.md
+    - METR System Terms:
+      - terms/patterns/METR System Terms.md
+      - central distribution system: terms/central distribution system.md
+      - field distribution system: terms/field distribution system.md
+      - METR: terms/METR.md
+      - METR component: terms/METR component.md
+      - METR consumer system: terms/METR consumer system.md
+      - METR discrepancy handling system: terms/METR discrepancy handling system.md
+      - METR distribution system: terms/METR distribution system.md
+      - METR environment: terms/METR environment.md
+      - METR regulation system: terms/METR regulation system.md
+      - METR system of systems: terms/METR system of systems.md
+      - METR user system: terms/METR user system.md
+      - system of systems: terms/system of systems.md
+    - METR Service Terms:
+      - terms/patterns/METR Service Terms.md
+      - rule discovery service: terms/rule discovery service.md
+      - rule verification service: terms/rule verification service.md
+      - service registration and discovery service: terms/service registration and
+          discovery service.md
+    - METR User Terms:
+      - terms/patterns/METR User Terms.md
+      - enforcement organization: terms/enforcement organization.md
+      - METR operator: terms/METR operator.md
+      - translator agent: terms/translator agent.md
+  - Transport Terms:
+    - terms/groups/Transport Terms.md
+    - Transport Terms:
+      - terms/patterns/Transport Terms.md
+      - conventional traffic control device: terms/conventional traffic control device.md
+      - telematic traffic control device: terms/telematic traffic control device.md
+      - traffic control device: terms/traffic control device.md
+      - transport facility: terms/transport facility.md
+      - transport infrastructure: terms/transport infrastructure.md
+  - Trustworthiness Terms:
+    - terms/groups/Trustworthiness Terms.md
+    - Trustworthiness Terms:
+      - terms/patterns/Trustworthiness Terms.md
+      - access control: terms/access control.md
+      - completeness: terms/completeness.md
+      - data privacy: terms/data privacy.md
+      - legitimacy: terms/legitimacy.md
+      - resilience: terms/resilience.md
+      - timeliness: terms/timeliness.md
+      - transparency: terms/transparency.md
+      - trustworthiness: terms/trustworthiness.md
+copyright: <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+  <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank"
+  rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+  src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img
+  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+  alt=""></a></p>
+theme:
+  name: material
+  features:
+  - content.code.copy
+  - content.status
+  - content.tooltips
+  - icons
+  - navigation.path
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.top
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      question: fontawesome/solid/comments
+  palette:
+  - scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+extra_css:
+- stylesheets/extra.css
+extra_javascript:
+- https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+- javascripts/tablesort.js
+plugins:
+- search
+- git-revision-date-localized:
+    type: date
+    fallback_to_build_date: true
+markdown_extensions:
+- abbr
+- admonition
+- attr_list
+- def_list
+- md_in_html
+- meta
+- footnotes
+- pymdownx.blocks.caption
+- pymdownx.details
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+    use_pygments: true
+- pymdownx.inlinehilite
+- pymdownx.snippets:
+    base_path: docs
+    check_paths: true
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: ''
+- pymdownx.tabbed:
+    alternate_style: true
+- toc:
+    permalink: true
+extra:
+  search:
+    highlight: true
+  hide:
+  - title
+  version:
+    provider: mike
+    alias: true
+    default: latest

@@ -1,0 +1,30 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:ruleProjectedLongevityTerms a owl:Ontology ;
+    dcterms:title "Rule Projected Longevity Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:persistentRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that does not have any expectation of a [termination time](termination time.md)"@en ;
+    skos:note "Derived from SP-66,SP-133."@en,
+        "A [variable rule](variable rule.md), such as a variable speed limit, often consists of a persistent rule (e.g., a variable speed limit applies to a specified stretch of a road) that is supplemented with [supporting data](supporting data.md) that identifies the current speed limit in effect."@en ;
+    skos:prefLabel "persistent rule"@en ;
+    :clause "3.2.8.1"@en .
+
+:temporaryRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that has or is expected to have a specified [termination time](termination time.md)"@en ;
+    skos:note "Derived from SP-66,SP-133."@en ;
+    skos:prefLabel "temporary rule"@en ;
+    :clause "3.2.8.2"@en .

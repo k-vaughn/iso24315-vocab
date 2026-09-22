@@ -1,0 +1,9 @@
+name: Label issues with "triage needed"
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  triage:
+    uses: ISO-TC204/ontology-shared-scripts/.github/workflows/triage_label.yml@main

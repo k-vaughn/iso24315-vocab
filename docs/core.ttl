@@ -1,0 +1,24 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:core a owl:Ontology ;
+    dcterms:title "METR Vocabulary Core"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date .
+
+:altPrefLabel a owl:AnnotationProperty ;
+    rdfs:label "alternative preferred label"@en ;
+    rdfs:comment "This property is used to identify an alternative preferred label for a concept."@en ;
+    rdfs:range xsd:string .
+
+:clause a owl:AnnotationProperty ;
+    rdfs:label "clause"@en ;
+    rdfs:comment "This property is used to identify the clause number of a concept within the document."@en ;
+    rdfs:range xsd:string .

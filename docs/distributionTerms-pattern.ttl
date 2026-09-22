@@ -1,0 +1,54 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:distributionTerms a owl:Ontology ;
+    dcterms:title "Distribution Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:cyberLocation a owl:Class ;
+    skos:definition "set of one or more parameters that allow an electronic resource to be accessed in a secure manner through indicated communication mechanisms"@en ;
+    skos:example "A universal resource locator (URL) with a public key"@en,
+        "A radio frequency and protocol details used for broadcasting information and authentication credentials"@en ;
+    skos:prefLabel "cyber location"@en ;
+    :clause "3.2.11.1"@en .
+
+:disseminationPlan a owl:Class ;
+    skos:definition "plan for providing data to user systems"@en ;
+    skos:note "A dissemination plan includes identification of the data covered by the plan, the mode of delivery (e.g., via a centralized distribution system, local beacons, RSS feed, etc.) and the geographic area for dissemination."@en ;
+    skos:prefLabel "dissemination plan"@en ;
+    :clause "3.2.11.2"@en .
+
+:localizedDistribution a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "dissemination of [METR information](METR information.md) using wireless technologies with less than a 1-kilometer range"@en ;
+    skos:example "WiFi"@en,
+        "LTE-V2X"@en ;
+    skos:prefLabel "localized distribution"@en ;
+    :clause "3.2.11.3"@en .
+
+:pulledDistribution a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "dissemination of [METR information](METR information.md) to a user based on a request or subscription"@en ;
+    skos:prefLabel "pulled distribution"@en ;
+    :clause "3.2.11.4"@en .
+
+:pushedDistribution a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "dissemination of [METR information](METR information.md) to a user based on general user registration or as a broadcast to all users within range"@en ;
+    skos:prefLabel "pushed distribution"@en ;
+    :clause "3.2.11.5"@en .
+
+:wide-areaDistribution a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "dissemination of [METR information](METR information.md) using wireless technologies with a range of greater than 1 kilometre"@en ;
+    skos:prefLabel "wide-area distribution"@en ;
+    :clause "3.2.11.6"@en .

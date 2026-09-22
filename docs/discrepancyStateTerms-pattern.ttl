@@ -1,0 +1,53 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:discrepancyStateTerms a owl:Ontology ;
+    dcterms:title "Discrepancy State Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:confirmedDiscrepancy a owl:Class ;
+    rdfs:subClassOf :discrepancy ;
+    skos:definition "[discrepancy](discrepancy.md) that has been investigated and a change in [METR information](METR information.md) and/or traffic control device(s) (3.4.1) were deemed to be warranted"@en ;
+    skos:prefLabel "confirmed discrepancy"@en ;
+    :clause "3.2.2.1"@en .
+
+:detectedDiscrepancy a owl:Class ;
+    rdfs:subClassOf :discrepancy ;
+    skos:definition "[discrepancy](discrepancy.md) that has been identified but not detected"@en ;
+    skos:note "Discrepancies can be detected by users or by any of the component systems of [METR](METR.md)."@en ;
+    skos:prefLabel "detected discrepancy"@en ;
+    :clause "3.2.2.2"@en .
+
+:rejectedDiscrepancy a owl:Class ;
+    rdfs:subClassOf :discrepancy ;
+    skos:definition "[discrepancy](discrepancy.md) that has been investigated but no change was deemed to be warranted"@en ;
+    skos:note "A discrepancy report (3.3.1.9) can be erroneously caused by a temporary vehicle obstruction of a [conventional traffic control device](conventional traffic control device.md)."@en ;
+    skos:prefLabel "rejected discrepancy"@en ;
+    :clause "3.2.2.3"@en .
+
+:reportedDiscrepancy a owl:Class ;
+    rdfs:subClassOf :detectedDiscrepancy ;
+    skos:definition "[detected discrepancy](detected discrepancy.md) that has been transmitted to a [discrepancy handler](discrepancy handler.md)"@en ;
+    skos:prefLabel "reported discrepancy"@en ;
+    :clause "3.2.2.4"@en .
+
+:resolvedDiscrepancy a owl:Class ;
+    rdfs:subClassOf :confirmedDiscrepancy ;
+    skos:definition "[confirmed discrepancy](confirmed discrepancy.md) that has been fully corrected"@en ;
+    skos:prefLabel "resolved discrepancy"@en ;
+    :clause "3.2.2.5"@en .
+
+:suspectedDiscrepancy a owl:Class ;
+    rdfs:subClassOf :discrepancy ;
+    skos:definition "[discrepancy](discrepancy.md) that has been reported to a [METR regulation system](METR regulation system.md) for investigation"@en ;
+    skos:prefLabel "suspected discrepancy"@en ;
+    :clause "3.2.2.6"@en .

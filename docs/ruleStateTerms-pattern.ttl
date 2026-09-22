@@ -1,0 +1,90 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:ruleStateTerms a owl:Ontology ;
+    dcterms:title "Rule State Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:activeRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is [implemented](implemented rule.md) and presently in effect"@en ;
+    skos:note "A rule can be active during certain hours of the day or upon other defined conditions."@en,
+        "Rules are only enforced when active."@en ;
+    skos:prefLabel "active rule"@en ;
+    :clause "3.2.4.1"@en .
+
+:approvedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that has been approved by a [rule maker](rule maker.md) with a future [inception time](inception time.md)"@en ;
+    skos:prefLabel "approved rule"@en ;
+    :clause "3.2.4.2"@en .
+
+:implementedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that has an [inception time](inception time.md) in the past and a [termination time](termination time.md) either undefined or in the future"@en ;
+    skos:note "An implemented rule can be [active](active rule.md), [inactive](inactive rule.md), or [overridden](overridden rule.md)."@en,
+        "Responsible legal authorities can define transition periods (e.g., as required for the installation of conventional traffic control devices, 3.4.1) when rules are implemented or [rescinded](rescinded rule.md) and the enforceability of the rules during these transition periods."@en ;
+    skos:prefLabel "implemented rule"@en ;
+    :clause "3.2.4.3"@en .
+
+:inactiveRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is enacted (3.2.4.3) but not presently in effect"@en ;
+    skos:note "A rule might not be in effect during certain hours of the day."@en,
+        "A rule cannot be enforced while it is inactive."@en,
+        "Guidance information that is not applicable at certain times (e.g., detour that is in effect during certain hours) can be designated as \"inactive\" during those times."@en ;
+    skos:prefLabel "inactive rule"@en ;
+    :clause "3.2.4.4"@en .
+
+:inceptionTime a owl:Class ;
+    skos:definition "point in time at which a rule (3.2.1.9) can first become applicable whenever all defined conditions are met"@en ;
+    skos:note "After the inception time, the rule becomes implemented and may be [active](active rule.md), [inactive](inactive rule.md), or [overridden](overridden rule.md)."@en,
+        "Rules can be associated with grace periods that occur after the inception time."@en ;
+    skos:prefLabel "inception time"@en ;
+    :clause "3.2.4.5"@en .
+
+:overriddenRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is enacted (3.2.4.3) but temporarily nullified or replaced"@en ;
+    skos:note "It is expected that an override will eventually terminate, even if the expected [termination time](termination time.md) is unknown."@en,
+        "The item that is temporarily nullified is termed to be “overridden” and the item that it is replaced with is termed to be “overriding”."@en,
+        "The replacement can be null."@en ;
+    skos:prefLabel "overridden rule"@en ;
+    :clause "3.2.4.6"@en .
+
+:proposedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is not yet approved by the [rule maker](rule maker.md)"@en ;
+    skos:prefLabel "proposed rule"@en ;
+    :clause "3.2.4.7"@en .
+
+:rescindedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that has a [termination time](termination time.md) in the past"@en ;
+    skos:prefLabel "rescinded rule"@en ;
+    :clause "3.2.4.8"@en .
+
+:revokedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that has been retroactively designated as never being legally enforceable"@en ;
+    skos:example "An electronic no parking rule might be revoked if it is discovered that the electronic version incorrectly identified the applicable times to be 03:00 to 20:00 when the actual rule identifies the applicable times to be 08:00 to 20:00."@en ;
+    skos:note "A rule that is revoked indicates that the rule should have never been enacted."@en,
+        "There can be a period of time after a rule is revoked during which associated [conventional traffic control devices](conventional traffic control device.md) are still present."@en ;
+    skos:prefLabel "revoked rule"@en ;
+    :clause "3.2.4.9"@en .
+
+:terminationTime a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "point in time at which a [rule](rule.md) became or is expected to become unenforceable"@en ;
+    skos:example "A temporary daily parking restriction that is intended to be in effect daily from 07:00 to 19:00 and ending 31 July would require a termination time of no earlier than 19:00 on 31 July."@en ;
+    skos:prefLabel "termination time"@en ;
+    :clause "3.2.4.10"@en .
