@@ -1,0 +1,160 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:generalDataTerms a owl:Ontology ;
+    dcterms:title "General Data Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:advisory a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that provides a safety recommendation as established by a [regulator](regulator.md)"@en ;
+    skos:note "While not having the full force of law, violating an advisory can have legal implications, especially in the case of vehicular collisions."@en ;
+    skos:prefLabel "advisory"@en ;
+    :clause "3.2.1.1"@en .
+
+:crowd-sourcedData a owl:Class ;
+    rdfs:subClassOf :supportingData ;
+    skos:definition "[supporting data](supporting data.md) from multiple external sources that are not signed by any [jurisdictional entity](jurisdictional entity.md) associated with the current location"@en ;
+    skos:example "ice detected by multiple sources that are not signed by the local [jurisdictional entity](jurisdictional entity.md)"@en,
+        "data reported from sensors near the roadside but not signed by the local [jurisdictional entity](jurisdictional entity.md)"@en ;
+    skos:note "Crowd-sourced data can include any combination of [infrastructure-sourced](infrastructure-sourced data.md) and [peer-sourced](peer-sourced data.md) data."@en ;
+    skos:prefLabel "crowd-sourced data"@en ;
+    :clause "3.2.1.2"@en .
+
+:dataCategory a owl:Class ;
+    skos:definition "class of data that is described by a set of specified characteristics"@en ;
+    skos:example "Speed limit [rules](rule.md) for motor vehicles within a specified jurisdictional area (3.3.1.21)"@en ;
+    skos:note "A data category is described by a set of characteristics; the term \"rule set\" is used to describe the rules that are currently contained in the data category."@en ;
+    skos:prefLabel "data category"@en ;
+    :clause "3.2.1.3"@en .
+
+:discrepancy a owl:Class ;
+    skos:definition "detected inconsistency in METR information (3.2.1.7)"@en ;
+    skos:prefLabel "discrepancy"@en ;
+    :clause "3.2.1.4"@en .
+
+:guidance a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that provides valuable information as established by a regulator"@en ;
+    skos:note "Regulators sometimes wish to additional information to travellers to ensure efficient operations. For example, a regulator can adopt a detour and provide information about the detour route to travellers."@en ;
+    skos:prefLabel "guidance"@en ;
+    :clause "3.2.1.5"@en .
+
+:highwayCode a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "set of legislation that defines general transport-related [rules](rule.md) and assigns specific authorities to [rule makers](rule maker.md) and [enforcers](enforcer.md)"@en ;
+    skos:note "The highway code includes rules for vehicle operation and other usage of roads (e.g., rules of the road), driver licensing, vehicle registration, vehicle inspection, insurance, etc. as well as establishing the legal basis for other rule makers to issue [regulations](regulation.md), [advisories](advisory.md), warnings, and [guidance](guidance.md)."@en,
+        "The term used for the highway code varies by [jurisdictional area](jurisdictional area.md) but is frequently highway code or vehicle code."@en ;
+    skos:prefLabel "highway code"@en ;
+    :altPrefLabel "vehicle code"@en ;
+    :clause "3.2.1.6"@en .
+
+:infrastructure-sourcedData a owl:Class ;
+    rdfs:subClassOf :supportingData ;
+    skos:definition "[supporting data](supporting data.md) from an external source that has a fixed or portable location, including Internet servers"@en ;
+    skos:example "current speed limit for a variable speed limit system as transmitted by a central or roadside system"@en,
+        "time of dusk as reported by a source from the Internet"@en,
+        "data reported from roadside sensors (authorized or not)"@en ;
+    skos:note "Infrastructure-sourced data can be [jurisdiction-sourced](jurisdiction-sourced data.md) or [crowd-sourced](crowd-sourced data.md)."@en ;
+    skos:prefLabel "infrastructure-sourced data"@en ;
+    :clause "3.2.1.7"@en .
+
+:jurisdiction-sourcedData a owl:Class ;
+    rdfs:subClassOf :supportingData ;
+    skos:definition "[supporting data](supporting data.md) from an external source and that is signed by a [jurisdictional entity](jurisdictional entity.md) associated with the current location"@en ;
+    skos:example "current speed limit for a variable speed limit system"@en,
+        "notice from an emergency vehicle that it is responding to a call"@en,
+        "data reported from authorized roadside sensors"@en ;
+    skos:note "Jurisdiction-sourced data can be [infrastructure-sourced](infrastructure-sourced data.md) or [peer-sourced](peer-sourced data.md)."@en ;
+    skos:prefLabel "jurisdiction-sourced data"@en ;
+    :clause "3.2.1.8"@en .
+
+:jurisdictionalVocabulary a owl:Class ;
+    skos:definition "listing of key terms used within [rules](rule.md) issued by a [jurisdictional entity](jurisdictional entity.md) along with their associated definitions"@en ;
+    skos:prefLabel "jurisdictional vocabulary"@en ;
+    :clause "3.2.1.9"@en .
+
+:metrInformation a owl:Class ;
+    skos:definition "Any information provided by a [METR distribution system](METR distribution system.md) to a [METR consumer system](METR consumer system.md)"@en ;
+    skos:prefLabel "METR information"@en ;
+    :clause "3.2.1.10"@en .
+
+:peer-sourcedData a owl:Class ;
+    rdfs:subClassOf :supportingData ;
+    skos:definition "[supporting data](supporting data.md) from an external source that is designed to operate when mobile"@en ;
+    skos:example "notice from an emergency vehicle that it is responding to a call"@en,
+        "ice detected by another vehicle"@en ;
+    skos:note "Peer-sourced data can be [crowd-sourced](crowd-sourced data.md) or [jurisdiction-sourced](jurisdiction-sourced data.md)."@en ;
+    skos:prefLabel "peer-sourced data"@en ;
+    :clause "3.2.1.11"@en .
+
+:regulation a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) having the force of law that is established by a [regulator](regulator.md)"@en ;
+    skos:prefLabel "regulation"@en ;
+    :clause "3.2.1.12"@en .
+
+:rule a owl:Class ;
+    skos:definition "information regarding allowed or recommended behaviour as established by a [rule maker](rule maker.md) for its [jurisdictional area](jurisdictional area.md)"@en ;
+    skos:note "Derived from SP-54."@en,
+        "The jurisdictional area can be a [campus](campus.md)."@en,
+        "The primary focus of [METR](METR.md) is to provide rules that relate to transport users."@en,
+        "Rules include [rules of the road](rules of the road.md), [regulations](regulation.md), [advisories](advisory.md), and [guidance](guidance.md)."@en ;
+    skos:prefLabel "rule"@en ;
+    :clause "3.2.1.13"@en .
+
+:ruleOrder a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "legally recognized document that officially specifies one or more [rules](rule.md)"@en ;
+    skos:note "A rule order can be associated with meta-data that activates or de-activates all rules defined within the order. For example, a [rule maker](rule maker.md) can define an order containing multiple rules that can be made [active](active rule.md) or [inactive](inactive rule.md) as a single unit."@en ;
+    skos:prefLabel "rule order"@en ;
+    skos:altLabel "traffic regulation order"@en ;
+    :clause "3.2.1.14"@en .
+
+:ruleSet a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "aggregation of [rules](rule.md) coupled with shared meta-data"@en ;
+    skos:note "Meta-data can identify the [freshness period](freshness period.md), a unique identifier, and other useful information."@en,
+        "The term \"rule set\" can be applied to [legal rules](legal rule.md), [electronic rules](electronic rule.md) sent from a [METR regulation system](METR regulation system.md) to a [METR distribution system](METR distribution system.md), electronic rules distributed by a METR distribution system, or other scenarios, each defining different sets for its own purposes."@en ;
+    skos:prefLabel "rule set"@en ;
+    :clause "3.2.1.15"@en .
+
+:rulesOfTheRoad a owl:Class ;
+    rdfs:subClassOf :highwayCode ;
+    skos:definition "component of the [highway code](highway code.md) that specifies foundational [rules](rule.md) for the operation of vehicles"@en ;
+    skos:prefLabel "rules of the road"@en ;
+    :clause "3.2.1.16"@en .
+
+:supportingData a owl:Class ;
+    skos:definition "data provided by a source other than the [METR system of systems](METR system of systems.md) that can impact the interpretation of a [rule](rule.md)"@en ;
+    skos:note "Derived from SP-54,SP-75,SP-133."@en,
+        "Supporting data can be categorized into [vehicle-sourced](vehicle-sourced data.md), [infrastructure-sourced](infrastructure-sourced data.md), [crowd-sourced](crowd-sourced data.md), and [user-sourced](user-sourced data.md) data."@en,
+        "Supporting data often changes more frequently than the [freshness periods](freshness period.md) defined for [METR information](METR information.md)."@en,
+        "Supporting data can affect the applicability of a rule (e.g., the current time affects the applicability of a time-based rule), can provide parameters for a rule (e.g. the current speed limit for a variable speed limit rule), or provide additive, redundant, or inconsistent information (e.g., an on-board system can detect road signs that the interpreter needs to consider in addition to the METR information)."@en ;
+    skos:prefLabel "supporting data"@en ;
+    :clause "3.2.1.17"@en .
+
+:user-sourcedData a owl:Class ;
+    rdfs:subClassOf :supportingData ;
+    skos:definition "[supporting data](supporting data.md) provided by the human user of the system"@en ;
+    skos:example "reporting that snow tires are installed"@en ;
+    skos:prefLabel "user-sourced data"@en ;
+    :clause "3.2.1.18"@en .
+
+:vehicle-sourcedData a owl:Class ;
+    rdfs:subClassOf :supportingData ;
+    skos:definition "[supporting data](supporting data.md) provided by built-in equipment"@en ;
+    skos:example "current time"@en,
+        "windshield wiper status"@en ;
+    skos:note "Derived from SP-133."@en ;
+    skos:prefLabel "vehicle-sourced data"@en ;
+    :clause "3.2.1.19"@en .

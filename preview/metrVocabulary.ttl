@@ -1,0 +1,31 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+: a owl:Ontology ;
+    dcterms:title "METR Vocabulary"@en ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:description "The management of electronic transport regulations (METR) provides a means for METR users to obtain trustworthy, authoritative, machine-interpretable, publicly available, transport-related information for the use of the road network to better provide safe, efficient, sustainable, comfortable, and equitable transport services. The scope of METR includes both rules that are relatively static (e.g., static speed limits) as well as those that are dynamic (e.g., variable speed limits, signalized intersections). However, where appropriate, METR incorporates existing standards (e.g., ISO/TS 19091 for signalized intersections). This document defines terms specific to the ISO 24315 series. The formal ontology is maintained through a [GitHub project](https://github.com/ISO-TC204/iso24315-vocab)."@en ;
+    cc:attributionName "ISO 24315"@en ;
+    vann:preferredNamespacePrefix "metrVocab"@en ;
+    dcterms:issued "2026-09-22"^^xsd:date ;
+    owl:versionInfo "0.1.0"@en ;
+    dcterms:creator "Kenneth Vaughn"@en ;
+    owl:versionIRI <https://w3id.org/itsdata/metr/0.1.0/> ;
+    rdfs:comment "0.1.0 - 2026-09-22: Converted from the ISO 24315 vocabulary source into a formal ontology using the ISO 14812 project structure. Note: Version numbers follow semantic versioning principles (major.minor.patch). This is different than ISO standard edition numbers, which are sequential."@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports
+        <core.ttl> ,
+        <terms-group.ttl> ,
+        <jurisdictionalTerms-group.ttl> ,
+        <dataTerms-group.ttl> ,
+        <metrArchitecturalTerms-group.ttl> ,
+        <transportTerms-group.ttl> ,
+        <trustworthinessTerms-group.ttl> .

@@ -1,0 +1,82 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:jurisdictionalConceptTerms a owl:Ontology ;
+    dcterms:title "Jurisdictional Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:campus a owl:Class ;
+    rdfs:subClassOf :jurisdictionalArea ;
+    skos:definition "[jurisdictional area](jurisdictional area.md) with a [jurisdictional entity](jurisdictional entity.md) who is the owner of the area but excluding [transport facilities](transport facility.md) managed by the local government"@en ;
+    skos:example "A point of interest (e.g., airport, university, business park, industrial area, shopping centre) that manages its own [transport infrastructure](transport infrastructure.md) separately from that managed by the local government. In this case, the point of interest and its own transport system are a part of the campus."@en,
+        "A point of interest (e.g., airport, university, business park, industrial area, shopping centre) that includes transport infrastructure that is managed by the local government. In this case, the government-managed transport infrastructure is a [governmental area](governmental area.md) while the campus is represented by the remainder of the area."@en ;
+    skos:note "The term \"private grounds\" is used in some countries; however since campuses can be owned by governmental entities (especially airports, military bases, public universities, etc.), the term \"campus\" is preferred."@en ;
+    skos:prefLabel "campus"@en ;
+    :altPrefLabel "private campus"@en ;
+    skos:altLabel "private grounds"@en ;
+    :clause "3.1.1"@en .
+
+:definedArea a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( :jurisdictionalArea :sub-area ) ] ;
+    skos:definition "[jurisdictional area](jurisdictional area.md) or [sub-area](sub-area.md)"@en ;
+    skos:prefLabel "defined area"@en ;
+    :clause "3.1.2"@en .
+
+:governmentalArea a owl:Class ;
+    rdfs:subClassOf :jurisdictionalArea ;
+    skos:definition "transport-related, [jurisdictional area](jurisdictional area.md) whose only [jurisdictional entities](jurisdictional entity.md) are governmental entities"@en ;
+    skos:example "A subway station owned by a governmental entity is a governmental area."@en ;
+    skos:note "The boundaries of a jurisdictional area can include or exclude geofenced areas to indicate which jurisdictional entities have authority over [transport facilities](transport facility.md) as needed."@en ;
+    skos:prefLabel "governmental area"@en ;
+    :clause "3.1.3"@en .
+
+:jurisdiction a owl:Class ;
+    skos:definition "legal power to issue rules of behaviour for a [defined area](defined area.md)"@en ;
+    skos:note "An entity of a jurisdiction that has competency over a particular subject matter is called a \"responsible legal authority\"."@en ;
+    skos:prefLabel "jurisdiction"@en ;
+    :clause "3.1.4"@en .
+
+:jurisdictionalArea a owl:Class ;
+    skos:definition "territory for which a [jurisdictional entity](jurisdictional entity.md) has the power to define rules of behaviour"@en ;
+    skos:note "A jurisdictional area might include non-contiguous locations."@en ;
+    skos:prefLabel "jurisdictional area"@en ;
+    :clause "3.1.5"@en .
+
+:jurisdictionalBoundary a owl:Class ;
+    skos:definition "territorial limit associated with a [jurisdictional area](jurisdictional area.md)"@en ;
+    skos:note "A geofence can be used to electronically represent a jurisdictional boundary."@en ;
+    skos:prefLabel "jurisdictional boundary"@en ;
+    :clause "3.1.6"@en .
+
+:jurisdictionalEntity a owl:Class ;
+    skos:definition "[person](https://isotc204.org/iso14812/terms/person/) or organization who has [jurisdiction](jurisdiction.md)"@en ;
+    skos:example "A city government"@en ;
+    skos:note "In the case of a geopolitical jurisdiction, the jurisdictional entity is typically the recognized government for the territory; in the case of a [campus](campus.md), the jurisdictional entity is typically the landowner."@en,
+        "A jurisdictional entity assigns its authority to one or more [rule makers](rule maker.md), which may be itself (e.g., the individual owner or a campus) or other divisions of the entity (e.g., police department, traffic department)."@en ;
+    skos:prefLabel "jurisdictional entity"@en ;
+    skos:altLabel "jurisdictional authority"@en ;
+    :clause "3.1.7"@en .
+
+:region a owl:Class ;
+    skos:definition "territory within which [METR users](METR user.md) expect to operate relatively seamlessly"@en ;
+    skos:example "European Common Market, North American Free Trade Area, Japan"@en ;
+    skos:note "Regions are typically bounded by physical, political, or other boundaries that limit the flow of traffic."@en ;
+    skos:prefLabel "region"@en ;
+    :clause "3.1.8"@en .
+
+:sub-area a owl:Class ;
+    rdfs:subClassOf :definedArea ;
+    skos:definition "[defined area](defined area.md) entirely within a [jurisdictional area](jurisdictional area.md)"@en ;
+    skos:note "Sub-areas can be defined as their own distinct jurisdictional areas or as areas that have consistent level of support for METR data throughout."@en ;
+    skos:prefLabel "sub-area"@en ;
+    :clause "3.1.9"@en .

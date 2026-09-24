@@ -1,0 +1,38 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:metrInformationStateTerms a owl:Ontology ;
+    dcterms:title "METR Information State Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:freshMETRInformation a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "[METR information](METR information.md) that has a [freshness period](freshness period.md) that has not expired"@en ;
+    skos:example "A [rule set](rule set.md) that is downloaded can be designated as being fresh for one week. The data would be considered outdated (3.2.5.3) after the one-week period."@en ;
+    skos:note "Derived from SP-57,SP-94."@en,
+        "[Emergent rules](emergent rule.md) can impact how fresh rules are interpreted, including overriding them."@en ;
+    skos:prefLabel "fresh METR information"@en ;
+    :clause "3.2.5.1"@en .
+
+:freshnessPeriod a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "duration during which an element of [METR information](METR information.md) is considered accurate"@en ;
+    skos:note "Derived from SP-57,SP-94."@en,
+        "[Receivers](receiver.md) can refresh their data prior to their expiration to avoid [outdated METR information](outdated METR information.md)."@en ;
+    skos:prefLabel "freshness period"@en ;
+    :clause "3.2.5.2"@en .
+
+:outdatedMETRInformation a owl:Class ;
+    rdfs:subClassOf :metrInformation ;
+    skos:definition "[METR information](METR information.md) that has a [freshness period](freshness period.md) that has expired"@en ;
+    skos:prefLabel "outdated METR information"@en ;
+    :clause "3.2.5.3"@en .

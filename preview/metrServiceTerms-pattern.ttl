@@ -1,0 +1,35 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:metrServiceTerms a owl:Ontology ;
+    dcterms:title "METR Service Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:ruleDiscoveryService a owl:Class ;
+    rdfs:subClassOf :metrUserSystem ;
+    skos:definition "ITS service where one or more [METR user systems](METR user system.md) enhance the accuracy of the [METR distribution system](METR distribution system.md) by reporting [rules](rule.md) observed in the field"@en ;
+    skos:note "The data can be sent through and summarized by an intermediary, such as a vehicle manufacturer."@en,
+        "The reported rules can be used as the initial source for data."@en,
+        "The reported rules can be used to update [METR](METR.md) to reflect real-time changes, such as due to natural disasters."@en ;
+    skos:prefLabel "rule discovery service"@en ;
+    :clause "3.3.3.1"@en .
+
+:ruleVerificationService a owl:Class ;
+    skos:definition "ITS service that independently verifies or questions the accuracy of a submitted [rule](rule.md) in a trustworthy manner"@en ;
+    skos:prefLabel "rule verification service"@en ;
+    :clause "3.3.3.2"@en .
+
+:serviceRegistrationAndDiscoveryService a owl:Class ;
+    skos:definition "service to find resources, entities or services based on a specification of the desired target"@en ;
+    skos:prefLabel "service registration and discovery service"@en ;
+    dcterms:source "ISO/IEC 20924:2021, 3.1.16"@en ;
+    :clause "3.3.3.3"@en .

@@ -1,0 +1,55 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:rulePublicationTerms a owl:Ontology ;
+    dcterms:title "Rule Publication Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:observableRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is [posted](posted rule.md) and able to be perceived by those affected"@en ;
+    skos:prefLabel "observable rule"@en ;
+    :clause "3.2.3.1"@en .
+
+:postedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is [publicized](publicized rule.md) to the those affected using [conventional traffic control devices](conventional traffic control device.md)"@en ;
+    skos:note "Derived from SP-133."@en ;
+    skos:prefLabel "posted rule"@en ;
+    :clause "3.2.3.2"@en .
+
+:pubicRecord a owl:Class ;
+    rdfs:subClassOf :postedRule ;
+    skos:definition "information that travellers are expected to know without [posted rules](posted rule.md)"@en ;
+    skos:prefLabel "pubic record"@en ;
+    :clause "3.2.3.3"@en .
+
+:publicizedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is announced to the public"@en ;
+    skos:prefLabel "publicized rule"@en ;
+    :clause "3.2.3.4"@en .
+
+:unobservableRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is [posted](posted rule.md) but not able to be perceived by a significant portion of those affected"@en ;
+    skos:note "Unobservable rules have been posted but might not be perceived properly due to any number of reasons, such as damage, fading, snow accumulation, obstructions, graffiti, removal, etc."@en ;
+    skos:prefLabel "unobservable rule"@en ;
+    :clause "3.2.3.5"@en .
+
+:unpostedRule a owl:Class ;
+    rdfs:subClassOf :rule ;
+    skos:definition "[rule](rule.md) that is [publicized](publicized rule.md) to those affected primarily through means other than [conventional traffic control devices](conventional traffic control device.md)"@en ;
+    skos:note "Derived from SP-66,SP-133."@en,
+        "Unposted rules are documented within the public [record](pubic record.md)."@en ;
+    skos:prefLabel "unposted rule"@en ;
+    :clause "3.2.3.6"@en .

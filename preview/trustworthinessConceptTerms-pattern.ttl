@@ -1,0 +1,67 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:trustworthinessConceptTerms a owl:Ontology ;
+    dcterms:title "Trustworthiness Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:accessControl a owl:Class ;
+    skos:definition "means to ensure that access to assets is authorized and restricted based on business and security requirements"@en ;
+    skos:prefLabel "access control"@en ;
+    dcterms:source "ISO/IEC 27000:2018, 3.1"@en ;
+    :clause "3.5.1"@en .
+
+:completeness a owl:Class ;
+    skos:definition "degree to which an IT service supports all the specified goals, objectives, and data specified by the user"@en ;
+    skos:note "Derived from SP-23,SP-32."@en ;
+    skos:prefLabel "completeness"@en ;
+    :clause "3.5.2"@en .
+
+:dataPrivacy a owl:Class ;
+    skos:definition "degree to which information is collected, retained, and disposed of in an authorized and permitted manner"@en ;
+    skos:note "Information collection includes aggregating and fusing data to create new data."@en,
+        "When the information relates to a person, the person that the data describes is responsible for granting authorization."@en,
+        "When the information relates to a vehicle, the person that owns the vehicle is responsible for granting authorization."@en ;
+    skos:prefLabel "data privacy"@en ;
+    :altPrefLabel "privacy"@en ;
+    :clause "3.5.3"@en .
+
+:legitimacy a owl:Class ;
+    skos:definition "degree to which an IT service has official status"@en ;
+    skos:prefLabel "legitimacy"@en ;
+    :clause "3.5.4"@en .
+
+:resilience a owl:Class ;
+    skos:definition "ability to anticipate and adapt to, resist or quickly recover from a potentially disruptive event, whether natural or man-made"@en ;
+    skos:prefLabel "resilience"@en ;
+    dcterms:source "ISO 15392:2019, 3.21"@en ;
+    :clause "3.5.5"@en .
+
+:timeliness a owl:Class ;
+    skos:definition "degree to which an IT service delivers outcomes within time limits to meet user needs"@en ;
+    skos:note "In some cases, service timeliness is affected by a combination of multiple services provided by different service providers. For example, the service of providing traffic signal status is expected to provide not only timely traffic signal status from the traffic signal controller to the RSU, but also timely delivery of the RSU to the vehicle OBU so that the driver or driving automation system (levels 1-5) is able to react and safely navigate the intersection."@en ;
+    skos:prefLabel "timeliness"@en ;
+    dcterms:source "ISO/IEC TS 25011:2017, 3.2.6.1, added \"to meet user needs\" and contextualized note to ITS"@en ;
+    :clause "3.5.6"@en .
+
+:transparency a owl:Class ;
+    skos:definition "open, comprehensive and understandable presentation of information"@en ;
+    skos:prefLabel "transparency"@en ;
+    dcterms:source "ISO 14050:2020, 3.2.14"@en ;
+    :clause "3.5.7"@en .
+
+:trustworthiness a owl:Class ;
+    skos:definition "ability to meet users' expectations for security, safety, and reliability"@en ;
+    skos:note "Trustworthiness is an attribute that can be applied to services, products, technology, data and information as well as, in the context of governance, to organizations."@en,
+        "Figure 1 shows the relationships among the characteristics of trustworthiness that are considered within the ISO 24315 series. Characteristics of security include confidentiality, integrity (including accountability and authenticity), and authority (including access control, data privacy, and legitimacy). Characteristics of reliability include accuracy, availability, completeness, quality, resilience, timeliness, transparency, and usability. Those characteristics that are not defined in this document are as defined in ISO/IEC/IEEE 24765:2017. See attachment: Vocab-107_1_Trustworthiness.png."@en ;
+    skos:prefLabel "trustworthiness"@en ;
+    :clause "3.5.8"@en .

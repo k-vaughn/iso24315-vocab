@@ -1,0 +1,42 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:transportConceptTerms a owl:Ontology ;
+    dcterms:title "Transport Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:conventionalTrafficControlDevice a owl:Class ;
+    skos:definition "physical infrastructure used to visually, audibly, or tangibly convey information to travellers"@en ;
+    skos:note "Traffic control devices include signs, signals, markings, physical barriers, etc."@en ;
+    skos:prefLabel "conventional traffic control device"@en ;
+    :altPrefLabel "TCD"@en ;
+    :clause "3.4.1"@en .
+
+:telematicTrafficControlDevice a owl:Class ;
+    skos:definition "physical infrastructure used to wirelessly convey machine interpretable information to traveller devices"@en ;
+    skos:prefLabel "telematic traffic control device"@en ;
+    :clause "3.4.2"@en .
+
+:trafficControlDevice a owl:Class ;
+    skos:definition "physical infrastructure used to convey information to travellers"@en ;
+    skos:prefLabel "traffic control device"@en ;
+    :clause "3.4.3"@en .
+
+:transportFacility a owl:Class ;
+    skos:definition "physical structure or installation, including related site works, serving one or more transport-related purposes"@en ;
+    skos:prefLabel "transport facility"@en ;
+    :clause "3.4.4"@en .
+
+:transportInfrastructure a owl:Class ;
+    skos:definition "system of facilities, equipment and services needed for the operation of a transport network"@en ;
+    skos:prefLabel "transport infrastructure"@en ;
+    :clause "3.4.5"@en .

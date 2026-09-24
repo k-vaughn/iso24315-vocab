@@ -1,0 +1,36 @@
+BASE <https://w3id.org/itsdata/metr/>
+PREFIX : <https://w3id.org/itsdata/metr/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:metrUserTerms a owl:Ontology ;
+    dcterms:title "METR User Terms"@en ;
+    dcterms:modified "2026-09-22"^^xsd:date ;
+    owl:imports <core.ttl> .
+
+:enforcementOrganization a owl:Class ;
+    skos:definition "organization authorized by a [jurisdictional entity](jurisdictional entity.md) to enforce its [rules](rule.md)"@en ;
+    skos:example "police department for a city"@en ;
+    skos:note "An enforcement agency can be authorized to enforce rules for multiple jurisdictional entities. For example, the city police can be authorized to enforce national laws."@en,
+        "An enforcement agency can be an independent organization or a sub-organization within a jurisdictional entity. For example, a [campus](campus.md) can contract with a private enforcement agency or have its own enforcement agency."@en,
+        "A jurisdictional entity can authorize multiple enforcement agencies. For example, a national entity can authorize multiple city police agencies to enforce national laws."@en,
+        "An enforcement agency can perform other functions as well. For example, an enforcement agency acts as a [rule maker](rule maker.md) when deciding to post [conventional traffic control devices](conventional traffic control device.md) at a scene of a collision."@en ;
+    skos:prefLabel "enforcement organization"@en ;
+    :clause "3.3.4.1"@en .
+
+:metrOperator a owl:Class ;
+    skos:definition "person that interfaces with a [METR component](METR component.md) to ensure its proper operation"@en ;
+    skos:prefLabel "METR operator"@en ;
+    :clause "3.3.4.2"@en .
+
+:translatorAgent a owl:Class ;
+    rdfs:subClassOf :metrOperator ;
+    skos:definition "[METR operator](METR operator.md) that interfaces with the [METR regulation system](METR regulation system.md) to enter [electronic rules](electronic rule.md)"@en ;
+    skos:prefLabel "translator agent"@en ;
+    :clause "3.3.4.3"@en .
