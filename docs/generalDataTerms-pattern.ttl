@@ -52,7 +52,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :highwayCode a owl:Class ;
     rdfs:subClassOf :rule ;
     skos:definition "set of legislation that defines general transport-related [rules](rule.md) and assigns specific authorities to [rule makers](rule maker.md) and [enforcers](enforcer.md)"@en ;
-    skos:note "The highway code includes rules for vehicle operation (e.g., rules of the road), driver licensing, vehicle registration, vehicle inspection, insurance, etc. as well as establishing the legal basis for other rule makers to issue [regulations](regulation.md), [advisories](advisory.md), warnings, and [guidance](guidance.md)."@en,
+    skos:note "The highway code includes rules for vehicle operation and other usage of roads (e.g., rules of the road), driver licensing, vehicle registration, vehicle inspection, insurance, etc. as well as establishing the legal basis for other rule makers to issue [regulations](regulation.md), [advisories](advisory.md), warnings, and [guidance](guidance.md)."@en,
         "The term used for the highway code varies by [jurisdictional area](jurisdictional area.md) but is frequently highway code or vehicle code."@en ;
     skos:prefLabel "highway code"@en ;
     :altPrefLabel "vehicle code"@en ;

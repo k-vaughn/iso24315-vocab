@@ -17,8 +17,18 @@ jobs:
 
   deploy:
     needs: release
-    if: needs.release.outputs.publish == 'true' && needs.release.outputs.tag != ''
+    if: ${{ needs.release.result == 'success' && needs.release.outputs.publish == 'true' && needs.release.outputs.tag != '' }}
     uses: ISO-TC204/ontology-shared-scripts/.github/workflows/update_release.yml@main
     with:
       release_tag: ${{ needs.release.outputs.tag }}
+    secrets: inherit
+
+  # Forks skip release tagging. The shared deploy workflow requires a tag,
+  # so publish a stable preview version instead of passing an empty one.
+  preview:
+    needs: release
+    if: ${{ !cancelled() && (needs.release.result == 'skipped' || (needs.release.result == 'success' && needs.release.outputs.tag == '')) }}
+    uses: ISO-TC204/ontology-shared-scripts/.github/workflows/update_release.yml@main
+    with:
+      release_tag: preview
     secrets: inherit
