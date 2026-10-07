@@ -16,9 +16,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     cc:attributionName "ISO 24315"@en ;
     vann:preferredNamespacePrefix "metrVocab"@en ;
     dcterms:issued "2026-09-22"^^xsd:date ;
-    owl:versionInfo "0.1.0"@en ;
+    owl:versionInfo "1.0.0" ;
     dcterms:creator "Kenneth Vaughn"@en ;
-    owl:versionIRI <https://w3id.org/itsdata/metr/0.1.0/> ;
+    owl:versionIRI <https://w3id.org/itsdata/metr/1.0.0> ;
     rdfs:comment "0.1.0 - 2026-09-22: Converted from the ISO 24315 vocabulary source into a formal ontology using the ISO 14812 project structure. Note: Version numbers follow semantic versioning principles (major.minor.patch). This is different than ISO standard edition numbers, which are sequential."@en ;
     dcterms:modified "2026-09-22"^^xsd:date ;
     owl:imports
