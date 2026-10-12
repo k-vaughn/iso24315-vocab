@@ -165,7 +165,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     :clause "3.3.1.22"@en .
 
 :ruleMaker a owl:Class ;
-    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that has the responsibility for creating and maintaining rules (3.2.1.9) for a geographic and operational scope as defined by the parent [jurisdictional entity](jurisdictional entity.md)"@en ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that has the responsibility for creating and maintaining [rules](rule.md) or (regulations](regulation.md) for a geographic and operational scope as defined by the parent [jurisdictional entity](jurisdictional entity.md)"@en ;
     skos:note "Rule makers include legislative bodies, which often establish the rules of the road, and regulators, which are typically responsible for location-specific rules, such as speed limits and stop signs."@en,
         "A simple jurisdictional entity can have a single entity that fulfils multiple roles. For example, the owner of a small shop can act as the jurisdictional entity, the rule maker, the [translator](translator.md), and the [rule signer](rule signer.md) for issuing accessible parking restrictions for the small parking lot."@en,
         "A complex jurisdictional entity can designate multiple rule makers, each assigned for different areas, different purposes, or both. For example, the State of New York can adopt a [highway code](highway code.md) that assigns its department of transportation the responsibility to create and maintain rules for motorways and allows local jurisdictions to create and maintain additional rules. Based on its authority, New York City can assign its department of transportation the responsibility to create and maintain static and temporary stop sign locations throughout the city, assign each precinct of its police department with the authority to create and maintain temporary stop sign locations only within their respective precincts, and assign land owners the responsibility to designate parking spaces for travellers with disabilities."@en ;
@@ -173,15 +173,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     :clause "3.3.1.23"@en .
 
 :ruleSigner a owl:Class ;
-    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that reviews and formally confirms the accuracy and integrity of an [electronic rule](electronic rule.md)"@en ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that reviews and formally confirms the accuracy and integrity of an [electronic regulation](electronic regulation.md)"@en ;
     skos:note "Derived from SP-41,SP-158."@en,
-        "METR uses non-repudiation to permanently associate the rule signing organization with the electronic rule (e.g., using an electronic signature). This can result in the assignment of legal responsibility for the accuracy and integrity of the rule. The association to the specific responsible individual can be achieved through in a multi-step process. For example, the [METR regulation system](METR regulation system.md) can associate the individual rule signing agent to the rule via an internal database entry while the electronic rule is associated with a rule signing organization through the use of an electronic signature."@en,
+        "METR uses non-repudiation to permanently associate the rule signing organization with the electronic regulation (e.g., using an electronic signature). This can result in the assignment of legal responsibility for the accuracy and integrity of the regulation. The association to the specific responsible individual can be achieved through in a multi-step process. For example, the [METR regulation system](METR regulation system.md) can associate the individual rule signing agent to the regulation via an internal database entry while the electronic regulation is associated with a rule signing organization through the use of an electronic signature."@en,
         "Ideally, the rule signing organization is the rule making organization but it can be a separate entity (e.g., if the rule making organization does not provide electronic rules)."@en ;
     skos:prefLabel "rule signer"@en ;
     :clause "3.3.1.24"@en .
 
 :ruleVerifier a owl:Class ;
-    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for independently verifying that each [electronic rule](electronic rule.md) accurately represents the [legal rule](legal rule.md)"@en ;
+    skos:definition "[role](https://isotc204.org/iso14812/terms/role/) that is responsible for independently verifying that each [electronic regulation](electronic regulation.md) accurately represents the [legal regulation](legal regulation.md)"@en ;
     skos:prefLabel "rule verifier"@en ;
     :clause "3.3.1.25"@en .
 
@@ -226,3 +226,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         "The \"user device\" is nominally a vehicle, but can be a smartphone if it hosts the METR [receiver](receiver.md), e.g., in the case of a pedestrian."@en ;
     skos:prefLabel "vehicle-sourced data provider"@en ;
     :clause "3.3.1.31"@en .
+
+:legislativeBody a owl:Class ;
+    rdfs:subClassOf :ruleMaker ;
+    skos:definition "[rule maker](rule maker.md) appointed by a [jurisdictional entity](jurisdictional entity.md) to establish the [rules of the road](rules of the road.md) for the respective [jurisdictional area](jurisdictional area.md)"@en ;
+    skos:example "A city can appoint its city council to establish the [rules of the road](rules of the road.md) for the city, within the limits established by its parental jurisdiction (e.g., county, parish, state, province, country)."@en ;
+    skos:prefLabel "legislative body"@en ;
+    :clause "3.3.1.32"@en .
+

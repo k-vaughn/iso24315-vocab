@@ -7,10 +7,10 @@ digraph {
 		rank=max
 		regulation [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e">regulation</TD></TR></TABLE>> URL="../terms/regulation/" margin=0]
 	}
-	rule [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER">rule</TD></TR></TABLE>> URL="../terms/rule/" margin=0 target=_top]
+	ruleOrRegulation [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER">rule or regulation</TD></TR></TABLE>> URL="../terms/rule or regulation/" margin=0 target=_top]
 	subgraph cluster_associated {
 		label="" style=invis
 		Invis [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD></TD></TR></TABLE>> margin=0 style=invis]
 	}
-	regulation -> rule [arrowhead=onormal style=solid]
+	regulation -> ruleOrRegulation [arrowhead=onormal style=solid]
 }

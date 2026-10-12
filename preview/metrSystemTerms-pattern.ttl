@@ -27,7 +27,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     :clause "3.3.2.2"@en .
 
 :metr a owl:Class ;
-    skos:definition "collection of [ITS services](https://isotc204.org/iso14812/terms/ITS service/) that provide for the distribution of [electronic rules](electronic rule.md) for the road network in a manner that satisfies [trustworthiness](trustworthiness.md) principles"@en ;
+    skos:definition "collection of [ITS services](https://isotc204.org/iso14812/terms/ITS service/) that provide for the distribution of [electronic regulations](electronic regulation.md) for the road network in a manner that satisfies [trustworthiness](trustworthiness.md) principles"@en ;
     skos:prefLabel "METR"@en ;
     :altPrefLabel "management of electronic traffic regulations"@en ;
     :clause "3.3.2.3"@en .

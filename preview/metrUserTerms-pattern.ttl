@@ -31,6 +31,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :translatorAgent a owl:Class ;
     rdfs:subClassOf :metrOperator ;
-    skos:definition "[METR operator](METR operator.md) that interfaces with the [METR regulation system](METR regulation system.md) to enter [electronic rules](electronic rule.md)"@en ;
+    skos:definition "[METR operator](METR operator.md) that interfaces with the [METR regulation system](METR regulation system.md) to enter [electronic regulations](electronic regulation.md)"@en ;
     skos:prefLabel "translator agent"@en ;
     :clause "3.3.4.3"@en .

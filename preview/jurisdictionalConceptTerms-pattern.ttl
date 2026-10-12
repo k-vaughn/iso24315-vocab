@@ -67,11 +67,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:altLabel "jurisdictional authority"@en ;
     :clause "3.1.7"@en .
 
-:region a owl:Class ;
+:globalRegion a owl:Class ;
     skos:definition "territory within which [METR users](METR user.md) expect to operate relatively seamlessly"@en ;
     skos:example "European Common Market, North American Free Trade Area, Japan"@en ;
     skos:note "Regions are typically bounded by physical, political, or other boundaries that limit the flow of traffic."@en ;
-    skos:prefLabel "region"@en ;
+    skos:prefLabel "global region"@en ;
     :clause "3.1.8"@en .
 
 :sub-area a owl:Class ;
