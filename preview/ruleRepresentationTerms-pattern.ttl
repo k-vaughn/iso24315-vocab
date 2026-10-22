@@ -17,6 +17,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :electronicRegulation a owl:Class ;
     rdfs:subClassOf :ruleOrRegulation ;
     skos:definition "representation of a [rule or regulation](rule or regulation.md) in a structured, digital format that can be readily processed by a computer to determine the intent of the rule or regulation"@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "electronic regulation"@en ;
     :clause "3.2.6.1"@en .
 
@@ -30,6 +31,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:subClassOf :electronicRegulation ;
     skos:definition "[electronic regulation](electronic regulation.md) that is produced and distributed in a trustworthy manner"@en ;
     skos:note "Digitized images do not meet this definition of electronic."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "METR regulation"@en ;
     :clause "3.2.6.3"@en .
 
@@ -37,12 +39,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:subClassOf :ruleOrRegulation ;
     skos:definition "representation of a [rule or regulation](rule or regulation.md) as presented in the field"@en ;
     skos:example "The speed limit as displayed on a speed limit sign"@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "physical regulation"@en ;
     :clause "3.2.6.4"@en .
 
 :legalRegulation a owl:Class ;
     rdfs:subClassOf :regulation ;
     skos:definition "representation of a [regulation](regulation.md) as recorded in official records of the [jurisdictional entity](jurisdictional entity.md)"@en ;
+    skos:historyNote "2026: Added to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "legal regulation"@en ;
     :clause "3.2.6.5"@en .
 

@@ -6,6 +6,7 @@ import traceback
 from collections import defaultdict
 from rdflib import Graph, XSD, Literal, URIRef, OWL, RDFS, RDF
 from rdflib.namespace import DCTERMS, SKOS
+from draft_terms import DRAFT_WATERMARK
 from ontology_processor_ttl import (
     BASE,
     parent_clause_from_class_entries,
@@ -271,6 +272,7 @@ def generate_markdown(
     class_to_onts: dict,
     term_collection_map: dict,
     repo_url: str | None = None,
+    draft_terms: set | None = None,
 ):
     """Generate Markdown file for a class, including all superclasses and disjoint statements in Formalization."""
     docs_dir = os.path.dirname(file_path)
@@ -421,9 +423,11 @@ def generate_markdown(
             other_annot_head += md_table_delimiter(2)
             other_annot_md = other_annot_head + other_annot_md + "\n"
         
+        watermark = DRAFT_WATERMARK if draft_terms and cls in draft_terms else ""
         content = (
             breadcrumb
             + title
+            + watermark
             + top_desc
             + diagram_line
             + clause_md

@@ -9,6 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from diagram_generator import generate_diagram
+from draft_terms import changed_terms_since_approved
 from markdown_generator import (
     generate_collection_pages,
     generate_index,
@@ -182,6 +183,7 @@ def main() -> None:
                 class_to_onts[label].append(ontology_name)
 
         prop_list = generate_prop_list(g, global_all_class_uris, ns, prefix_map)
+        draft_terms = changed_terms_since_approved(g)
 
         for cls in sorted(local_classes, key=lambda uri: get_label(g, uri).lower()):
             if not is_publishable_term(cls, g):
@@ -220,6 +222,7 @@ def main() -> None:
                     class_to_onts,
                     term_collection_map,
                     repo_url,
+                    draft_terms,
                 )
                 processed_count += 1
             except Exception as exc:

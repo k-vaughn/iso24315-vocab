@@ -16,12 +16,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :emergentRule a owl:Class ;
     rdfs:subClassOf :metrRegulation ;
-    skos:definition "[METR regulation](METR regulation.md) created and implemented while previously distributed, pre-announced [rule and regulation sets](rule and regulation set.md) are still fresh (3.2.5.1)"@en ;
+    skos:definition "[METR regulation](METR regulation.md) created and implemented while previously distributed, pre-announced [rule and regulation sets](rule and regulation set.md) are still [fresh](freshness period.md)"@en ;
     skos:example "Immediately after downloading the current pre-announced rule and regulation set, the [jurisdictional entity](jurisdictional entity.md) issues a new [METR regulation](METR regulation.md) that closes a lane on a road due to a vehicular collision."@en ;
     skos:note "Derived from SP-66,SP-133,SP-54."@en,
         "Emergent rules typically require alternate distribution mechanisms to ensure that [METR users](METR user.md) are notified in time to allow for operational decisions."@en,
         "Emergent rules can include both [temporary](temporary rule.md) and [persistent](persistent rule.md) rules."@en ;
-    skos:prefLabel "emergent rule"@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
+    skos:prefLabel "emergent regulation"@en ;
     :clause "3.2.7.1"@en .
 
 :pre-announcedRule a owl:Class ;
@@ -30,5 +31,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:note "Derived from SP-133."@en,
         "Pre-announced rules do not require low-latency communications because they are distributed well enough in advance so that all users with up-to-date [rule and regulation sets](rule and regulation set.md) will have a copy of the rule."@en,
         "Pre-announced rules typically have relatively long [freshness periods](freshness period.md) but can be impacted by [emergent rules](emergent rule.md)."@en ;
-    skos:prefLabel "pre-announced rule"@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
+        skos:prefLabel "pre-announced regulation"@en ;
     :clause "3.2.7.2"@en .

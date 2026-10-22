@@ -17,9 +17,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :freshMETRInformation a owl:Class ;
     rdfs:subClassOf :metrInformation ;
     skos:definition "[METR information](METR information.md) that has a [freshness period](freshness period.md) that has not expired"@en ;
-    skos:example "A [rule and regulation set](rule and regulation set.md) that is downloaded can be designated as being fresh for one week. The data would be considered outdated (3.2.5.3) after the one-week period."@en ;
+    skos:example "A [rule and regulation set](rule and regulation set.md) that is downloaded can be designated as being fresh for one week. The data would be considered [outdated](outdated METR information.md) after the one-week period."@en ;
     skos:note "Derived from SP-57,SP-94."@en,
-        "[Emergent rules](emergent rule.md) can impact how fresh rules are interpreted, including overriding them."@en ;
+        "[Emergent regulations](emergent regulation.md) can impact how fresh electronic regulations are interpreted, including overriding them."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "fresh METR information"@en ;
     :clause "3.2.5.1"@en .
 

@@ -71,6 +71,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:definition "territory within which [METR users](METR user.md) expect to operate relatively seamlessly"@en ;
     skos:example "European Common Market, North American Free Trade Area, Japan"@en ;
     skos:note "Regions are typically bounded by physical, political, or other boundaries that limit the flow of traffic."@en ;
+    skos:historyNote "2026: Added to clarify the intended meaning of \"region\"."@en ;
     skos:prefLabel "global region"@en ;
     :clause "3.1.8"@en .
 

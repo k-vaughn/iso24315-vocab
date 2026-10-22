@@ -18,6 +18,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:subClassOf :regulation ;
     skos:definition "[regulation](regulation.md) that provides a safety recommendation"@en ;
     skos:note "While not having the full force of law, violating an advisory can have legal implications, especially in the case of vehicular collisions."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "advisory"@en ;
     :clause "3.2.1.1"@en .
 
@@ -32,9 +33,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :dataCategory a owl:Class ;
     skos:definition "class of data that is described by a set of specified characteristics"@en ;
-    skos:example "Speed limit [rules](rule.md) for motor vehicles within a specified jurisdictional area (3.3.1.21)"@en ;
+    skos:example "Speed limit [regulations](regulation.md) for motor vehicles within a specified [jurisdictional area](jurisdictional area.md)."@en ;
     skos:note "A data category is described by a set of characteristics; the term \"rule and regulation set\" is used to describe the rules and regulations that are currently contained in the data category."@en ;
-    skos:prefLabel "data category"@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
+        skos:prefLabel "data category"@en ;
     :clause "3.2.1.3"@en .
 
 :discrepancy a owl:Class ;
@@ -45,8 +47,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :guidance a owl:Class ;
     rdfs:subClassOf :regulation ;
     skos:definition "[regulation](regulation.md) that provides valuable information"@en ;
-    skos:note "Regulators sometimes wish to additional information to travellers to ensure efficient operations. For example, a regulator can adopt a detour and provide information about the detour route to travellers."@en ;
-    skos:prefLabel "guidance"@en ;
+    skos:note "Regulators sometimes wish to provide additional information to travellers to ensure efficient operations. For example, a regulator can adopt a detour and provide information about the detour route to travellers."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
+        skos:prefLabel "guidance"@en ;
     :clause "3.2.1.5"@en .
 
 :highwayCode a owl:Class ;
@@ -54,7 +57,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:definition "set of legislation that defines general transport-related [rules](rule.md) and assigns specific authorities to [rule makers](rule maker.md) and [enforcers](enforcer.md)"@en ;
     skos:note "The highway code includes rules for vehicle operation and other usage of roads (e.g., rules of the road), driver licensing, vehicle registration, vehicle inspection, insurance, etc. as well as establishing the legal basis for other rule makers to issue [regulations](regulation.md), [advisories](advisory.md), warnings, and [guidance](guidance.md)."@en,
         "The term used for the highway code varies by [jurisdictional area](jurisdictional area.md) but is frequently highway code, vehicle code, or similar. In fact, the code can be divided into multiple parts, each with its own name and purpose."@en ;
-    skos:prefLabel "highway code"@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
+        skos:prefLabel "highway code"@en ;
     :altPrefLabel "vehicle code"@en ;
     :clause "3.2.1.6"@en .
 
@@ -101,6 +105,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:subClassOf :ruleOrRegulation ;
     skos:definition "provision that defines allowed or recommended behaviour as established by a [regulator](regulator.md) within the respective [jurisdictional area](jurisdictional area.md)"@en ;
     skos:note "A regulation can be [regulatory](regulatory.md), [advisory](advisory.md), or [guidance](guidance.md)."@en ;
+    skos:historyNote "2026: Revised to no longer be a subset of a \"rule\"."@en ;
     skos:prefLabel "regulation"@en ;
     skos:altLabel "traffic regulation"@en ;
     :clause "3.2.1.12"@en .
@@ -108,12 +113,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :rule a owl:Class ;
     rdfs:subClassOf :ruleOrRegulation ;
     skos:definition "provision within the [rules of the road](rules of the road.md) that defines allowed or recommended behaviour within the respective [jurisdictional area](jurisdictional area.md)"@en ;
+    skos:historyNote "2026: Revised to be limited to provisions within the rules of the road."@en ;
     skos:prefLabel "rule"@en ;
     :clause "3.2.1.13"@en .
 
 :trafficRegulationOrder a owl:Class ;
     skos:definition "legally recognized document that officially specifies one or more [regulations](regulation.md)"@en ;
     skos:note "A traffic regulation order can be associated with meta-data that activates or de-activates all or some of the regulations defined within the order. For example, a [rule maker](rule maker.md) can define an order containing multiple regulations that can be made [active](active rule.md) or [inactive](inactive rule.md) as a single unit."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "traffic regulation order"@en ;
     skos:altLabel "TRO"@en ;
     :clause "3.2.1.14"@en .
@@ -123,6 +130,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:definition "aggregation of [rules](rule.md) and [regulations](regulation.md) coupled with shared meta-data"@en ;
     skos:note "Meta-data can identify the [freshness period](freshness period.md), a unique identifier, and other useful information."@en,
         "The term \"rule and regulation set\" can be applied to [legal rules](legal rule.md), [legal regulations](legal regulation.md), [electronic regulations](electronic regulation.md), etc. each defining different sets for its own purposes."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "rule and regulation set"@en ;
     skos:altLabel "R&R set"@en ;
     skos:altLabel "rule set"@en ;
@@ -164,6 +172,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:note "The jurisdictional area can be a [campus](campus.md)."@en,
         "The primary focus of [METR](METR.md) is to provide rules and regulations that relate to transport users."@en,
         "The plural form is \"rules and regulations\". The abbreviation \"R&R\" means \"rule or regulation\" while \"R&Rs\" means \"rules and regulations\"."@en ;
+    skos:historyNote "2026: Revised to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "rule or regulation"@en ;
     skos:altLabel "rules and regulations"@en ;
     skos:altLabel "R&R"@en ;
@@ -173,6 +182,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:subClassOf :regulation ;
     skos:definition "[regulation](regulation.md) that prescribes permitted or required behaviour"@en ;
     skos:example "A sign that indicates permitted manoeuvres at an intersection."@en ;
+    skos:historyNote "2026: Added to align with the updated definitions for [rule](rule.md) and [regulation](regulation.md)."@en ;
     skos:prefLabel "regulatory"@en ;
     :clause "3.2.1.21"@en .
 
