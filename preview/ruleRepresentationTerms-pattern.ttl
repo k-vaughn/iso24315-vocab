@@ -11,7 +11,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :ruleRepresentationTerms a owl:Ontology ;
     dcterms:title "Rule Representation Terms"@en ;
-    dcterms:modified "2026-09-22"^^xsd:date ;
+    dcterms:modified "2026-10-22"^^xsd:date ;
     owl:imports <core.ttl> .
 
 :electronicRegulation a owl:Class ;

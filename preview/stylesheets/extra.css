@@ -184,3 +184,78 @@ next-fig::after {
 .md-nav--secondary .md-nav__list>.md-nav__item>.md-nav>.md-nav__list>.md-nav__item>.md-nav>.md-nav__list>.md-nav__item>.md-nav>.md-nav__list>.md-nav__item>.md-nav__link::before {
     content: counter(toc-section, var(--section-style)) "." counter(toc-subsection) "." counter(toc-subsubsection) "." counter(toc-subsubsubsection) "." counter(toc-subsubsubsubsection) " ";
 }
+
+/* Hide first column in tables with class 'hide-first-col' */
+.md-typeset table.hide-first-col th:first-child,
+.md-typeset table.hide-first-col td:first-child {
+    display: none;
+}
+
+/* Same draft stamps as the ISO 24315 site.
+   draft4 DRAFT — terms changed since the last approved release.
+   <div class="draft4-watermark" aria-hidden="true"></div> */
+.draft1-watermark,
+.draft2-watermark,
+.draft3-watermark,
+.draft4-watermark,
+.draft5-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: #d32f2f;
+  font-family: "Arial Black", Impact, "Segoe UI", sans-serif;
+  font-size: clamp(2.15rem, 7vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.08;
+  text-align: center;
+  white-space: pre;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.28;
+  transform: rotate(-18deg);
+}
+
+.draft1-watermark::before,
+.draft2-watermark::before,
+.draft3-watermark::before,
+.draft4-watermark::before,
+.draft5-watermark::before {
+  white-space: pre;
+}
+
+.draft1-watermark::before {
+  content: "NOT READY\A FOR REVIEW";
+}
+
+.draft2-watermark {
+  font-size: clamp(2.65rem, 9vw, 4.8rem);
+}
+
+.draft2-watermark::before {
+  content: "PRE-DRAFT";
+}
+
+.draft3-watermark {
+  font-size: clamp(2.65rem, 9vw, 4.8rem);
+}
+
+.draft3-watermark::before {
+  content: "PRE-DRAFT";
+}
+
+.draft4-watermark {
+  font-size: clamp(3.25rem, 12vw, 6.25rem);
+  opacity: 0.22;
+}
+
+.draft4-watermark::before {
+  content: "DRAFT";
+}
+
+.draft5-watermark::before {
+  content: "FINAL DRAFT";
+}
